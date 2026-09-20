@@ -576,21 +576,18 @@ def desenhar_pause():
     TELA.blit(overlay, (0, 0))
 
     escrever("PAUSADO", FONTE_GRANDE, AMARELO, LARGURA_TELA // 2, 230, True)
-    escrever("Aperte P para voltar", FONTE_MEDIA, BRANCO, LARGURA_TELA // 2, 290, True)
+    escrever("Aperte P para voltar", FONTE_MEDIA, BRANCO, LARGURA_TELA // 2, 290, True)
 
-
-async def main():
-     estado = MENU
+    async def main():
+    estado = MENU
 
     jogador, plataformas, cristais, inimigos, portal = criar_fase()
     cristais_coletados = 0
     som_final_tocado = False
-
     rodando = True
 
     while rodando:
         RELOGIO.tick(FPS)
-
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
                 rodando = False
