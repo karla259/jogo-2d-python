@@ -32,8 +32,7 @@ jobs:
         run: pip install pygbag
 
       - name: Transformar jogo para navegador
-        run: python -m pygbag --build .
-
+        run: python -m pygbag --build --disable-sound-format-error .
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
 
