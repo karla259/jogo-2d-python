@@ -578,7 +578,7 @@ def desenhar_pause():
     escrever("PAUSADO", FONTE_GRANDE, AMARELO, LARGURA_TELA // 2, 230, True)
     escrever("Aperte P para voltar", FONTE_MEDIA, BRANCO, LARGURA_TELA // 2, 290, True)
 
-    async def main():
+async def main():
     estado = MENU
 
     jogador, plataformas, cristais, inimigos, portal = criar_fase()
@@ -587,7 +587,8 @@ def desenhar_pause():
     rodando = True
 
     while rodando:
-        RELOGIO.tick(FPS)
+        RELOGIO.tick(FPS) 
+
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
                 rodando = False
@@ -634,7 +635,7 @@ def desenhar_pause():
 
         if estado == JOGANDO:
             teclas = pygame.key.get_pressed()
-            jogador.atualizar(teclas, plataformas)
+           jogador.atualizar(teclas, plataformas)
 
             for inimigo in inimigos:
                 inimigo.atualizar()
