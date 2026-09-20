@@ -4,7 +4,7 @@ import math
 import wave
 import struct
 import pygame
-
+import asyncio
 # =========================
 # AVENTURA DOS CRISTAIS 2D
 # Jogo demo em Python/Pygame
@@ -579,8 +579,8 @@ def desenhar_pause():
     escrever("Aperte P para voltar", FONTE_MEDIA, BRANCO, LARGURA_TELA // 2, 290, True)
 
 
-def main():
-    estado = MENU
+async def main():
+     estado = MENU
 
     jogador, plataformas, cristais, inimigos, portal = criar_fase()
     cristais_coletados = 0
@@ -710,10 +710,8 @@ def main():
             desenhar_tela_final("GAME OVER", "Você perdeu todas as vidas.", VERMELHO)
 
         pygame.display.flip()
+        await asyncio.sleep(0)
 
-    pygame.quit()
-    sys.exit()
-
-
+pygame.quit()
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
