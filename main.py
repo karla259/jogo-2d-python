@@ -710,6 +710,5 @@ async def main():
         pygame.display.flip()
         await asyncio.sleep(0)
 
-pygame.quit()
 if __name__ == "__main__":
     asyncio.run(main())
