@@ -633,50 +633,82 @@ async def main():
                     elif evento.key == pygame.K_ESCAPE:
                         estado = MENU
 
-        if estado == JOGANDO:
-    teclas = pygame.key.get_pressed()
-    jogador.atualizar(teclas, plataformas)
+                 if estado == JOGANDO:
+                     teclas = 
+         pygame.key.get_pressed()
 
-    for inimigo in inimigos:
-        inimigo.atualizar()
+                    jogador.atualizar(teclas, 
+                    plataformas)
 
-                if inimigo.vivo and jogador.ataque_rect.colliderect(inimigo.rect):
-                    inimigo.vivo = False
-                    tocar("cristal")
+                    for inimigo in 
+inimigos:
 
-                if inimigo.vivo and jogador.rect.colliderect(inimigo.rect):
-                    jogador.tomar_dano()
+inimigo.atualizar()
 
-            for cristal in cristais:
-                cristal.atualizar()
+                if inimigo.vivo 
+and jogador.ataque_rect.colliderect(ini
+migo.rect):
+                    inimigo.vivo = 
+False
+                    
+tocar("cristal")
 
-                if not cristal.coletado and jogador.rect.colliderect(cristal.rect):
-                    cristal.coletado = True
-                    cristais_coletados += 1
-                    tocar("cristal")
+                if inimigo.vivo 
+and 
+jogador.rect.colliderect(inimigo.r
+ect):
+                    
+jogador.tomar_dano()
+
+            for cristal in 
+cristais:
+                
+cristal.atualizar()
+
+                if not 
+cristal.coletado and 
+jogador.rect.colliderect(cristal.r
+ect):
+                    
+cristal.coletado = True
+                    
+cristais_coletados += 1
+                    
+tocar("cristal")
 
             portal.atualizar()
 
-            if jogador.rect.top > ALTURA_TELA + 80:
+            if jogador.rect.top > 
+ALTURA_TELA + 80:
                 jogador.vidas -= 1
                 tocar("dano")
 
-                if jogador.vidas > 0:
-                    jogador.reiniciar_posicao()
+                if jogador.vidas > 
+0:
+                    
+jogador.reiniciar_posicao()
 
             if jogador.vidas <= 0:
                 estado = DERROTA
 
-                if not som_final_tocado:
-                    tocar("derrota")
-                    som_final_tocado = True
+                if not 
+som_final_tocado:
+                    
+tocar("derrota")
+                    
+som_final_tocado = True
 
-            if cristais_coletados >= 5 and jogador.rect.colliderect(portal.rect):
+            if cristais_coletados 
+>= 5 and jogador.rect.colliderect(portal.re
+ct):
                 estado = VITORIA
 
-                if not som_final_tocado:
-                    tocar("vitoria")
-                    som_final_tocado = True
+                if not 
+som_final_tocado:
+                    
+tocar("vitoria")
+                    
+som_final_tocado = True
 
         camera_x = jogador.rect.centerx - LARGURA_TELA // 2
         camera_x = max(0, min(camera_x, LARGURA_FASE - LARGURA_TELA))
