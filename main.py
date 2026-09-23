@@ -633,50 +633,29 @@ async def main():
                     elif evento.key == pygame.K_ESCAPE:
                         estado = MENU
 
-                 if estado == JOGANDO:
-                     teclas = 
-         pygame.key.get_pressed()
+                         if estado == JOGANDO:
+                             teclas = pygame.key.get_pressed()
+            jogador.atualizar(teclas, plataformas)
 
-                    jogador.atualizar(teclas, 
-                    plataformas)
+            for inimigo in inimigos:
+                inimigo.atualizar()
 
-                    for inimigo in 
-inimigos:
+                if inimigo.vivo and jogador.ataque_rect.colliderect(inimigo.rect):
+                    inimigo.vivo = False
+                    tocar("cristal")
 
-inimigo.atualizar()
+                if inimigo.vivo and jogador.rect.colliderect(inimigo.rect):
+                    jogador.tomar_dano()
 
-                if inimigo.vivo 
-and jogador.ataque_rect.colliderect(ini
-migo.rect):
-                    inimigo.vivo = 
-False
-                    
-tocar("cristal")
+            for cristal in cristais:
+                cristal.atualizar()
 
-                if inimigo.vivo 
-and 
-jogador.rect.colliderect(inimigo.r
-ect):
-                    
-jogador.tomar_dano()
+                if not cristal.coletado and jogador.rect.colliderect(cristal.rect):
+                    cristal.coletado = True
+                    cristais_coletados += 1
+                    tocar("cristal")
 
-            for cristal in 
-cristais:
-                
-cristal.atualizar()
-
-                if not 
-cristal.coletado and 
-jogador.rect.colliderect(cristal.r
-ect):
-                    
-cristal.coletado = True
-                    
-cristais_coletados += 1
-                    
-tocar("cristal")
-
-            portal.atualizar()
+            portal.atualizar() 
 
             if jogador.rect.top > 
 ALTURA_TELA + 80:
