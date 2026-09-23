@@ -634,11 +634,11 @@ async def main():
                         estado = MENU
 
         if estado == JOGANDO:
-            teclas = pygame.key.get_pressed()
-           jogador.atualizar(teclas, plataformas)
+    teclas = pygame.key.get_pressed()
+    jogador.atualizar(teclas, plataformas)
 
-            for inimigo in inimigos:
-                inimigo.atualizar()
+    for inimigo in inimigos:
+        inimigo.atualizar()
 
                 if inimigo.vivo and jogador.ataque_rect.colliderect(inimigo.rect):
                     inimigo.vivo = False
