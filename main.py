@@ -8,24 +8,22 @@ RED=(236,68,82); GREEN=(65,203,112); LGREEN=(145,238,142); BROWN=(112,72,48); GR
 SKIN=(255,215,194); HAIR=(78,47,36); SHADOW=(28,30,48)
 GRAVITY=.75
 
-pygame.mixer.pre_init(44100,-16,2,512); pygame.init()
-SCREEN=pygame.display.set_mode((W,H)); pygame.display.set_caption("Aventura dos Cristais")
-CLOCK=pygame.time.Clock()
-F16=pygame.font.SysFont("arial",16,bold=True); F18=pygame.font.SysFont("arial",18,bold=True)
-F22=pygame.font.SysFont("arial",22,bold=True); F34=pygame.font.SysFont("arial",34,bold=True); F50=pygame.font.SysFont("arial",50,bold=True)
-BASE=os.path.dirname(os.path.abspath(__file__)); SOUND_DIR=os.path.join(BASE,"assets","sons")
+pygame.init()
 
-def sound(name):
-    try:
-        p=os.path.join(SOUND_DIR,name+".wav")
-        if pygame.mixer.get_init() and os.path.exists(p): return pygame.mixer.Sound(p)
-    except Exception: pass
-    return None
-SOUNDS={n:sound(n) for n in ("pulo","cristal","ataque","dano","vitoria","derrota")}
+SCREEN = pygame.display.set_mode((W, H))
+pygame.display.set_caption("Aventura dos Cristais")
+CLOCK = pygame.time.Clock()
+
+F16 = pygame.font.Font(None, 22)
+F18 = pygame.font.Font(None, 26)
+F22 = pygame.font.Font(None, 32)
+F34 = pygame.font.Font(None, 46)
+F50 = pygame.font.Font(None, 66)
+
+# Som desativado temporariamente na versão web
+# para evitar travamento ao abrir no celular/tablet.
 def play_sound(name):
-    try:
-        if SOUNDS.get(name): SOUNDS[name].play()
-    except Exception: pass
+    pass
 
 def txt(s,msg,font,color,x,y,center=False):
     im=font.render(msg,True,color); r=im.get_rect(); r.center=(x,y) if center else r.center; r.topleft=(x,y) if not center else r.topleft; s.blit(im,r); return r
