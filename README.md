@@ -1,68 +1,73 @@
-# 🎮 Aventura dos Cristais 2D
+# 💎 Aventura dos Cristais
 
-Jogo 2D desenvolvido em Python com Pygame como projeto acadêmico.
+Um jogo 2D desenvolvido em **Python**, criado como projeto acadêmico durante minha formação em **Engenharia de Software**.
 
-## 🌐 Jogar online
+O objetivo do jogador é explorar diferentes fases, coletar os cristais e chegar ao portal para avançar na aventura.
 
-👉 [Clique aqui para jogar Aventura dos Cristais 2D](https://karla259.github.io/jogo-2d-python/)
+## 🎮 Jogar online
 
-O jogo pode ser aberto pelo navegador em computador, celular ou tablet.
+🌐 **Clique aqui para jogar:**
 
-## 🕹️ Sobre o jogo
+https://karla259.github.io/jogo-2d-python/
 
-O objetivo é explorar o cenário, coletar os cristais e chegar ao portal para concluir a fase.
+O jogo também possui controles na tela para facilitar a jogabilidade.
 
-O projeto trabalha conceitos de:
+## 🕹️ Como jogar
 
-- Python
-- Pygame
-- Lógica de programação
-- Movimentação de personagem
-- Colisões
-- Inimigos
-- Sistema de vidas
-- Coleta de cristais
-- Fases de jogo
+Durante cada fase, o jogador deve:
 
-## 🎯 Objetivo do projeto
+- 💎 Coletar **5 cristais**
+- ❤️ Evitar perder todas as vidas
+- 🌀 Chegar ao portal depois de coletar os cristais
+- 🏆 Completar todas as fases
 
-Desenvolver um jogo 2D utilizando programação em Python, aplicando lógica, interação entre objetos e elementos gráficos.
+### Controles
 
-## 👩‍💻 Desenvolvido por
+⬅️ **Atrás** — movimenta o personagem para a esquerda  
+➡️ **Frente** — movimenta o personagem para a direita  
+🟢 **Pular** — faz o personagem saltar  
+🔴 **Faca** — ataque do personagem  
 
-**Karla Lucinara Alves de Rosa**  
-Estudante de Engenharia de Software
-# 🎮 Aventura dos Cristais 2D
+## 🗺️ Fases
 
-Jogo 2D desenvolvido em Python com Pygame como projeto acadêmico.
+O jogo possui **3 fases**:
 
-## 🌐 Jogar online
+1. 🌄 Vale Celeste
+2. 🌳 Floresta Encantada
+3. 💎 Ruínas de Cristal
 
-👉 [Clique aqui para jogar Aventura dos Cristais 2D](https://karla259.github.io/jogo-2d-python/)
+Ao concluir a última fase, é exibida a mensagem:
 
-O jogo pode ser aberto pelo navegador em computador, celular ou tablet.
+**“VOCÊ ZEROU O JOGO! Todos os cristais foram salvos!”**
 
-## 🕹️ Sobre o jogo
-
-O objetivo é explorar o cenário, coletar os cristais e chegar ao portal para concluir a fase.
-
-O projeto trabalha conceitos de:
+## 🛠️ Tecnologias utilizadas
 
 - Python
 - Pygame
-- Lógica de programação
-- Movimentação de personagem
-- Colisões
-- Inimigos
-- Sistema de vidas
-- Coleta de cristais
-- Fases de jogo
+- Pygbag
+- Git
+- GitHub
+- GitHub Pages
+- GitHub Actions
+
+## 📁 Estrutura do projeto
+
+- `main.py` — código principal do jogo
+- `customize_web.py` — personalização da versão web
+- `assets/` — recursos utilizados pelo jogo
+- `.github/workflows/deploy.yml` — publicação automática no GitHub Pages
+- `README.md` — documentação do projeto
 
 ## 🎯 Objetivo do projeto
 
-Desenvolver um jogo 2D utilizando programação em Python, aplicando lógica, interação entre objetos e elementos gráficos.
+Desenvolver um jogo 2D utilizando programação em Python, aplicando conceitos de lógica de programação, eventos, movimentação, colisões e elementos gráficos.
+
+O projeto também foi adaptado para funcionar diretamente no navegador através do GitHub Pages.
 
 ## 👩‍💻 Desenvolvido por
 
-**Karla Lucinara Alves de Rosa**  
-Estudante de Engenharia de Software
+**Karla Lucinara Alves de Rosa**
+
+🎓 Bacharelado em Engenharia de Software — UNINTER
+
+💡 Interesse em Inteligência Artificial, Robótica, Tecnologia e Desenvolvimento de Software.
